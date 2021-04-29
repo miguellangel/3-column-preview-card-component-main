@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*BREAKPOINTS*/
+$small: 0px;
+$medium: 768px;
+$large: 992px;
+$larger: 1024px;
+$extraLarge: 1441px;
+
+@mixin media($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        @include media($medium) {
+            grid-template-columns: auto;
+        }
+        place-self: center;
+
+        .item {
+            display: grid;
+            width: 200px;
+            height: 350px;
+            grid-template-rows: 20% 15% 50% 15%;
+            padding: 44px;
+            color: rgba(235, 249, 248, 1);
+            font-family: 'Lexend Deca';
+            font-size: 15px;
+
+            img {
+                place-self: center start;
+            }
+            h3 {
+                font-family: 'Big Shoulders Display';
+                font-size: 300%;
+                padding: 0;
+                margin: 0;
+            }
+            .btn {
+                border-radius: 3em;
+                width: 80%;
+                height: 80%;
+                place-self: center start;
+                border: none;
+                color: var(--bg);
+                font-family: 'Lexend Deca';
+                
+                &:active, &:hover {
+                    border: none;
+                    outline: none;
+                    background: var(--bg);
+                    color: white;
+                    border: 2px solid white;
+                }
+            }
+        }
+        .item:not(.m) {
+            @include media($medium) {
+                border-radius: var(--m, 0 0 0.75em 0.75em);
+            }
+            border-radius: var(--, 0 0.75em 0.75em 0);
+        }
+        .f{
+            --bg: rgba(226, 133, 37, 1);
+            background: var(--bg);
+            --: 0.75em 0 0 0.75em;
+            --m: 0.75em 0.75em 0 0;
+        }
+        .m {
+            --bg: rgba(1, 105, 114, 1);
+            background: var(--bg);
+        }
+        .l {
+            --bg: rgba(0, 64, 63, 1);
+            background: var(--bg);
+        }
+
+    }
+}

@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+/*BREAKPOINTS*/
+body {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body .container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-self: center;
+}
+@media (max-width: 768px) {
+  body .container {
+    grid-template-columns: auto;
+  }
+}
+body .container .item {
+  display: grid;
+  width: 200px;
+  height: 350px;
+  grid-template-rows: 20% 15% 50% 15%;
+  padding: 44px;
+  color: #ebf9f8;
+  font-family: "Lexend Deca";
+  font-size: 15px;
+}
+body .container .item img {
+  place-self: center start;
+}
+body .container .item h3 {
+  font-family: "Big Shoulders Display";
+  font-size: 300%;
+  padding: 0;
+  margin: 0;
+}
+body .container .item .btn {
+  border-radius: 3em;
+  width: 80%;
+  height: 80%;
+  place-self: center start;
+  border: none;
+  color: var(--bg);
+  font-family: "Lexend Deca";
+}
+body .container .item .btn:active, body .container .item .btn:hover {
+  border: none;
+  outline: none;
+  background: var(--bg);
+  color: white;
+  border: 2px solid white;
+}
+body .container .item:not(.m) {
+  border-radius: var(--, 0 0.75em 0.75em 0);
+}
+@media (max-width: 768px) {
+  body .container .item:not(.m) {
+    border-radius: var(--m, 0 0 0.75em 0.75em);
+  }
+}
+body .container .f {
+  --bg: rgba(226, 133, 37, 1);
+  background: var(--bg);
+  --: 0.75em 0 0 0.75em;
+  --m: 0.75em 0.75em 0 0;
+}
+body .container .m {
+  --bg: rgba(1, 105, 114, 1);
+  background: var(--bg);
+}
+body .container .l {
+  --bg: rgba(0, 64, 63, 1);
+  background: var(--bg);
+}
+
+/*# sourceMappingURL=index.css.map */
