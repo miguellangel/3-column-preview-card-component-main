@@ -46,6 +46,7 @@ body .container .item .btn {
   border: none;
   color: var(--bg);
   font-family: "Lexend Deca";
+  cursor: pointer;
 }
 body .container .item .btn:active, body .container .item .btn:hover {
   border: none;
